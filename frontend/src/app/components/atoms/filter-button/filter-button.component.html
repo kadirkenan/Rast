@@ -1,0 +1,21 @@
+<div class="filter-button">
+  <button
+    type="button"
+    pButton
+    icon="pi pi-filter-fill"
+    styleClass="filter-button"
+    (click)="overlayPanel.toggle($event)"
+  ></button>
+
+  <p-overlayPanel #overlayPanel [dismissable]="true">
+    <ul class="filter-options">
+      <li
+        *ngFor="let option of searchOptions"
+        [ngClass]="{ active: selectedCriteria === option.value }"
+        (click)="selectCriteria(option.value)"
+      >
+        {{ option.label }}
+      </li>
+    </ul>
+  </p-overlayPanel>
+</div>

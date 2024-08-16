@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$primary-color: #EFF2FF;
+$button-color: #744BFC; 
+
+  .table-header {
+    ::ng-deep .p-inputgroup-addon:last-child,
+    .search-filter-container .p-inputgroup button:last-child,
+    .search-filter-container .p-inputgroup input:last-child,
+    .search-filter-container .p-inputgroup > .p-inputwrapper:last-child > .p-component,
+    .search-filter-container .p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+      border-top-right-radius: 30px !important;
+      border-bottom-right-radius: 30px !important;
+      background-color: $button-color;
+      height: 40px;
+      
+    }
+  }
+
+  input:focus {
+    outline: none; 
+    box-shadow: none; 
+    border-color: initial;
+  }
+
+  ::ng-deep .new-link-button .p-button-label {
+    font-size: 14px !important;
+    font-family: 'Poppins', sans-serif;
+    }
+
+   .new-link-button {
+    background-color: $button-color !important;
+    border: none;
+    color: white !important;
+    font-size: 1rem;
+    border-radius: 30px;
+    width: 16%;
+    height: 40px;
+  
+    .pi {
+      font-size: 1.2rem;
+      color: rgb(121, 12, 188);
+    }
+  }
+
+.searchbar-input{
+  border-top-left-radius: 30px !important; 
+  border-bottom-left-radius: 30px !important; 
+  height: 40px;
+}
+
+@media screen and (max-width: 1155px) {
+  ::ng-deep .new-link-button .p-button-label {
+    font-size: 9px !important;
+   
+    }
+}
+
+@media screen and (max-width: 992px) {
+  ::ng-deep .new-link-button{
+    width: 3.6rem !important;
+  
+   .p-button-label {
+      display: none;   
+    }
+  }
+  
+  .search-filter-container .p-inputgroup{
+    width: 100% !important;
+  }
+}
+
+.search-filter-container .p-inputgroup {
+  position: relative;
+}
+
+.searchbar-input {
+  padding-right: 2.5rem; 
+}
+
+.clear-icon {
+  position: absolute;
+  top: 25%;
+  right: 3.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  font-size: 1px;
+  z-index: 1;
+}
+
+.clear-icon i {
+  font-size: 0.8rem;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: $button-color;
+}
+
+a i {
+  font-size: 1.5rem; 
+  color: #ffffff; 
+}

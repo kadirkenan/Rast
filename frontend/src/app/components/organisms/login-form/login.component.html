@@ -1,0 +1,35 @@
+<div class="login-container col-12">
+  <div class="card col-6 mr-5">
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="w-75">
+      <div class="input-group">
+        <span class="p-float-label w-100 mb-2">
+          <input
+            class="col-12"
+            id="username"
+            type="text"
+            name="username"
+            pInputText
+            [(ngModel)]="authData.username"
+            required
+          />
+          <label for="username">Kullanıcı Adı</label>
+        </span>
+      </div>
+      <div class="input-group">
+        <span class="p-float-label w-100 mb-3">
+          <input
+            id="password"
+            type="password"
+            name="password"
+            [(ngModel)]="authData.password"
+            required
+            pInputText
+          />
+          <label for="password">Şifre</label>
+        </span>
+      </div>
+      <button type="submit">Giriş</button>
+    </form>
+  </div>
+  <app-login-animation class="col-6"></app-login-animation>
+</div>

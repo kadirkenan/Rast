@@ -1,0 +1,39 @@
+
+::ng-deep .filter-button .p-button.p-button-icon-only {
+  
+    border-radius: 50%;
+    background-color: #ffffff !important;
+    border: none;
+    padding: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    height: 42px;
+    width: 49px;
+  
+    .p-button-icon {
+      color: #744BFC !important;
+    }
+  }
+  
+  .filter-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  
+  .filter-options li {
+    padding: 10px 30px;
+    cursor: pointer;
+  }
+  
+  .filter-options li.active {
+    background-color: #EFF2FF;
+    border-radius: 39px;
+  }
+  
+  .p-overlaypanel {
+    z-index: 1000;
+  }
+  

@@ -1,0 +1,16 @@
+<div class="recent-links">
+  <h5>Son Ziyaret Edilenler</h5>
+  <ul>
+    <li *ngFor="let link of visitedLinks">
+      <a [href]="link" target="_blank">{{ link }}</a>
+    </li>
+  </ul>
+  <button
+    pButton
+    type="button"
+    class="clean-button"
+    label="Temizle"
+    style="font-size: 13px"
+    (click)="clearLinks()"
+  ></button>
+</div>

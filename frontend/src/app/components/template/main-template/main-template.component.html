@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+<div class="col-12 my-3 pb-5 link-content" style="height: 100%">
+  <div class="col-12 d-flex align-items-center justify-content-center">
+    <div
+      class="col-11 flex-column md:col-4 mt-5 d-flex justify-content-between table-header"
+    >
+      <app-search-bar
+        (searchTextChanged)="onSearch($event.text, $event.criteria)"
+        (openModal)="openModal()"
+      >
+      </app-search-bar>
+      <app-table
+        [list$]="list$"
+        [searchText]="searchText"
+        [searchCriteria]="selectedCriteria"
+        (deleteLink)="deleteLink($event)"
+        (openModal)="openModal($event)"
+      >
+      </app-table>
+    </div>
+  </div>
+</div>
+
+<!-- create and edit modal -->
+<p-dialog [(visible)]="isModalVisible" (onHide)="closeModal()" [modal]="true">
+  <form (ngSubmit)="submitForm(ngForm)" #ngForm="ngForm">
+    <p class="form-title mb-1">Sosyal Medya Linki</p>
+    <input
+      class="form-input"
+      type="text"
+      pInputText
+      name="url"
+      [ngModel]="(selectedLink$ | async)?.url"
+      appLinkValidation
+      required
+      #url="ngModel"
+      [ngClass]="url?.invalid && (url?.touched || url?.dirty) ? 'mb-1' : 'mb-3'"
+    />
+
+    <div
+      class="error-message"
+      *ngIf="url?.invalid && (url?.touched || url?.dirty)"
+    >
+      <p>Geçersiz URL formatı.</p>
+    </div>
+
+    <p class="form-title mb-1">Sosyal Medya Adı</p>
+    <input
+      class="form-input mb-3"
+      type="text"
+      pInputText
+      name="name"
+      [ngModel]="(selectedLink$ | async)?.name"
+      required
+    />
+
+    <p class="form-title mb-1">Açıklama</p>
+    <input
+      class="form-input"
+      type="text"
+      pInputText
+      name="description"
+      [ngModel]="(selectedLink$ | async)?.description"
+      required
+    />
+    <p-footer>
+      <button
+        pButton
+        type="button"
+        class="cancel-button"
+        label="Vazgeç"
+        style="font-size: 13px"
+        (click)="closeModal()"
+      ></button>
+      <button
+        pButton
+        type="submit"
+        class="submit-button"
+        label="Kaydet"
+        style="font-size: 13px"
+      ></button>
+    </p-footer>
+  </form>
+</p-dialog>
